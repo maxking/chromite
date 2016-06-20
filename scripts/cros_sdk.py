@@ -75,7 +75,7 @@ def FetchRemoteTarballs(storage_dir, urls):
     for header in result.output.splitlines():
       # We must walk the output to find the string '200 OK' for use cases where
       # a proxy is involved and may have pushed down the actual header.
-      if header.find('200 OK') != -1:
+      if header.find('200') != -1:
         successful = True
       elif header.lower().startswith("content-length:"):
         content_length = int(header.split(":", 1)[-1].strip())
